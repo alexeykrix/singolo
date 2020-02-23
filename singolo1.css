@@ -244,12 +244,12 @@ a:hover {
 }
 
 .service__icon:hover {
-  background: rgb(102, 109, 137);
+  background: rgb(188, 192, 209);
 }
 
 svg path {
   transition: 0.3s;
-}
+
 
 svg:hover path {
   fill: #f2f2f2;
