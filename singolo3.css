@@ -187,3 +187,20 @@ footer {
   float: right;
   line-height: 76px;
 }
+.footer__link {
+  margin-right: 4px;
+  margin-left: 0;
+  text-align: center;
+  line-height: 32px;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #69708b;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.footer__link:hover {
+  background: #d2d3d3;
+}
