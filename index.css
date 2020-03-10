@@ -127,6 +127,7 @@ a:hover {
 
 .slider__nav button:hover {
   opacity: 0.5;
+  transform: scale(1.1);
 }
 
 .slider__nav button:active {
