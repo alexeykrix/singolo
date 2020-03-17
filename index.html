@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singolo</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
 </head>
 
@@ -36,9 +36,27 @@
                 <button class="arrow-prev"></button>
                 <button class="arrow-next"></button>
             </div>
-            <div class="slide">
-                <img src="./assets/img/iPhone Vertical.png" alt="Iphone (vertical)" class="slide__img-v">
-                <img src="./assets/img/iPhone Horizontal.png" alt="Iphone (Horizontal)" class="slide__img-h">
+            <div class="slide-1">
+                <div class="iphoneVerticalContainer">
+                    <img src="./assets/img/iPhone Vertical.png" alt="Iphone (vertical)" class="slide__img-v">
+                    <div class="slide-1-v-btn"></div>
+                    <div class="slide-1-v-screen"></div>
+                </div>
+                <div class="iphoneHorizontalContainer">
+                    <img src="./assets/img/iPhone Horizontal.png" alt="Iphone (Horizontal)" class="slide__img-h">
+                    <div class="slide-1-h-btn"></div>
+                    <div class="slide-1-h-screen"></div>
+                </div>
+            </div>
+
+            <div class="slide-2">
+                <img src="./assets/img/iPhone Vertical-side_slide_2.png" alt="Iphone (vertical)" class="slide-2__img-l">
+                <div class="iphoneVerticalContainer">
+                    <img src="./assets/img/iPhone Vertical-center_slide_2.png" alt="Iphone (Horizontal)" class="slide-2__img-c">
+                    <div class="slide-2-v-btn"></div>
+                    <div class="slide-2-v-screen"></div>
+                </div>
+                <img src="./assets/img/iPhone Vertical-side_slide_2.png" alt="Iphone (Horizontal)" class="slide-2__img-r">
             </div>
         </div>
     </section>
@@ -220,24 +238,24 @@
                 <input type="email" placeholder="Email (Required)" required class="input__mail">
                 <input type="text" placeholder="Subject" class="input__subject">
                 <textarea name="" placeholder="Describe your project in detail..." class="input__text"></textarea>
-                <input type="submit" value="Submit" class="input__submit">
+                <input type="submit" value="send" class="input__submit">
             </form>
-            
+
             <div class="quote__contact">
                 <h3 class="quote__heading">Contact Information</h3>
                 <p class="quote__contact-text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
                 <span class="quote__contact-geo">
                     <img src="./assets/img/location.png" alt="geolocation icon">
-                    Elm St. 14/05 Lost City  
-                </s>
-                <a href="tel: 03528 331 86 35" class="quote__contact-link quote__contact-phone">
-                    <img src="./assets/img/cell-phone.png" alt="phone icon">  
-                    03528 331 86 35  
-                </a>
-                <a href="mailto: info@singolo.com" class="quote__contact-link quote__contact-mail">
-                    <img src="./assets/img/mail.png" alt="mail icon">  
-                    info@singolo.com 
-                </a>
+                    Elm St. 14/05 Lost City
+                    </s>
+                    <a href="tel: 03528 331 86 35" class="quote__contact-link quote__contact-phone">
+                        <img src="./assets/img/cell-phone.png" alt="phone icon">
+                        03528 331 86 35
+                    </a>
+                    <a href="mailto: info@singolo.com" class="quote__contact-link quote__contact-mail">
+                        <img src="./assets/img/mail.png" alt="mail icon">
+                        info@singolo.com
+                    </a>
             </div>
         </main>
     </section>
@@ -251,6 +269,8 @@
             <a href="#" class="footer__link"><img src="./assets/img/linkedin.png" alt="in"></a>
         </span>
     </footer>
+
+    <script src="./script.js"></script>
 
 </body>
 
