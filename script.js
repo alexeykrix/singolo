@@ -3,7 +3,10 @@ const navLinks = document.querySelectorAll('.nav__link');
 //    nav handler
 
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', evt => {
+        evt.preventDefault();
+        const id = link.href.split('html#');
+        document.getElementById(id[1]).scrollIntoView({ behavior: 'smooth' });
         navLinks.forEach(link => link.classList = "nav__link");
         link.classList = "nav__link nav__link-active";
     });
@@ -141,4 +144,5 @@ submitBtn.addEventListener('click', evt => {
         }, 300);
     });
 
+    form.reset();
 });

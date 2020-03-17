@@ -53,19 +53,19 @@ footer {
 
 
 /*              HEADER         */
-#home {
+.header {
   position: sticky;
   z-index: 33;
   top: -40px;
 }
 
-#home .logo {
+.header .logo {
   position: sticky;
   z-index: 33;
   top: 10px;
 }
 
-#home nav {
+.header nav {
   position: sticky;
   z-index: 33;
   top: 20px;
@@ -762,6 +762,8 @@ a:hover {
 }
 
 .formMessage p {
+  max-width: 260px;
+  word-wrap: break-word;
   overflow: auto;
   max-height: 50px;
   margin-bottom: 10px;
