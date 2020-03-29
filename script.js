@@ -236,23 +236,23 @@ const   home    =  document.querySelector('.slider'),
         contact   =  document.getElementById('contact');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY < services.offsetTop - home.offsetHeight) {
+    if (window.scrollY < services.offsetTop) {
         navLinks.forEach(link => link.classList = "nav__link");
         document.getElementById('to-home').classList = "nav__link nav__link-active";
     }
-    if (window.scrollY >= services.offsetTop - home.offsetHeight && window.scrollY < portfolio.offsetTop - home.offsetHeight) {
+    if (window.scrollY >= services.offsetTop && window.scrollY < portfolio.offsetTop) {
         navLinks.forEach(link => link.classList = "nav__link");
         document.getElementById('to-services').classList = "nav__link nav__link-active";
     }
-    if (window.scrollY >= portfolio.offsetTop - home.offsetHeight) {
+    if (window.scrollY >= portfolio.offsetTop) {
         navLinks.forEach(link => link.classList = "nav__link");
         document.getElementById('to-portfolio').classList = "nav__link nav__link-active";
     }
-    if (window.scrollY >= about.offsetTop - home.offsetHeight) {
+    if (window.scrollY >= about.offsetTop) {
         navLinks.forEach(link => link.classList = "nav__link");
         document.getElementById('to-about').classList = "nav__link nav__link-active";
     }
-    if (window.scrollY >= contact.offsetTop - home.offsetHeight) {
+    if (window.scrollY >= contact.offsetTop) {
         navLinks.forEach(link => link.classList = "nav__link");
         document.getElementById('to-contact').classList = "nav__link nav__link-active";
     }
