@@ -349,6 +349,8 @@ a:hover {
 /*        Services        */
 
 .services {
+  max-width: 1020px;
+  box-sizing: border-box;
   padding-right: 40px;
   padding-left: 40px;
   background: #f2f2f2;
@@ -374,8 +376,6 @@ a:hover {
 
 
 .services__main {
-  padding-left: 40px;
-  padding-right: 40px;
   margin-top: 48px;
   max-width: 1020px;
   display: flex;
@@ -443,6 +443,8 @@ a:hover {
 
 
 .portfolio {
+  max-width: 1020px;
+  box-sizing: border-box;
   padding-right: 40px;
   padding-left: 40px;
   background: #2d303a;
@@ -534,6 +536,8 @@ a:hover {
 
 
 .about {
+  max-width: 1020px;
+  box-sizing: border-box;
   padding-right: 40px;
   padding-left: 40px;
   background: #f2f2f2;
