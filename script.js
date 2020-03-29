@@ -223,5 +223,41 @@ const swipedetect = (el) => {
     }, false);
 }
 
-var el = document.querySelector('.slider');
+let el = document.querySelector('.slider');
 swipedetect(el);
+
+
+
+//              scroll
+const   home    =  document.querySelector('.slider'),
+        services  =  document.getElementById('services'),
+        portfolio =  document.getElementById('portfolio'),
+        about     =  document.getElementById('about'),
+        contact   =  document.getElementById('contact');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY < services.offsetTop - home.offsetHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-home').classList = "nav__link nav__link-active";
+    }
+    if (window.scrollY >= services.offsetTop - home.offsetHeight && window.scrollY < portfolio.offsetTop - home.offsetHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-services').classList = "nav__link nav__link-active";
+    }
+    if (window.scrollY >= portfolio.offsetTop - home.offsetHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-portfolio').classList = "nav__link nav__link-active";
+    }
+    if (window.scrollY >= about.offsetTop - home.offsetHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-about').classList = "nav__link nav__link-active";
+    }
+    if (window.scrollY >= contact.offsetTop - home.offsetHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-contact').classList = "nav__link nav__link-active";
+    }
+    if (window.scrollY + 1 >= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+        navLinks.forEach(link => link.classList = "nav__link");
+        document.getElementById('to-contact').classList = "nav__link nav__link-active";
+    }
+});
