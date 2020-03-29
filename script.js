@@ -1,16 +1,48 @@
-const navLinks = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelectorAll('.nav__link'),
+    navList = document.querySelectorAll('.nav__list'),
+    mobileNavBtn = document.querySelector('#mobileNavBtn'),
+    nav = document.querySelector('.nav');
 
 //    nav handler
+
+let navOpened = false;
+
+const closeNav = () => {
+    navOpened = false;
+    mobileNavBtn.style.transform = '';
+    nav.style.width = '';
+}
+
+const openNav = () => {
+    setTimeout(() => navOpened = true, 100);
+    nav.style.width = '70%';
+    mobileNavBtn.style.transform = 'rotate(0deg)';
+}
+
+mobileNavBtn.addEventListener('click', () => {
+    nav.style.width === '70%' ? closeNav() : openNav();
+});
+document.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.classList != "nav__list" &&
+        navOpened === true && e.target.classList) {
+        closeNav();
+    }
+});
 
 navLinks.forEach(link => {
     link.addEventListener('click', evt => {
         evt.preventDefault();
-        const id = link.href.split('html#');
-        document.getElementById(id[1]).scrollIntoView({ behavior: 'smooth' });
         navLinks.forEach(link => link.classList = "nav__link");
         link.classList = "nav__link nav__link-active";
+        const id = link.href.split('html#');
+        document.getElementById(id[1]).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
+
+//  slider
 
 
 const arrowPrev = document.querySelector('.arrow-prev'),
@@ -24,7 +56,7 @@ const arrowPrev = document.querySelector('.arrow-prev'),
     slide2Vbtn = document.querySelector('.slide-2-v-btn'),
     slide2Vscreen = document.querySelector('.slide-2-v-screen ');
 
-//  slider
+
 
 const toSlide2 = () => {
     slide1.style.width = '0%';
@@ -132,7 +164,7 @@ submitBtn.addEventListener('click', evt => {
 
     setTimeout(() => {
         message.style.opacity = '1';
-        message.style.transform = 'translate(0%, -50%)';
+        message.style.transform = 'translate(-50%, -50%)';
     }, 300);
 
     message.querySelector('button').addEventListener('click', () => {
@@ -146,3 +178,50 @@ submitBtn.addEventListener('click', evt => {
 
     form.reset();
 });
+
+const swipedetect = (el) => {
+
+    let surface = el;
+    let startX = 0;
+    let startY = 0;
+    let distX = 0;
+    let distY = 0;
+    let startTime = 0;
+    let elapsedTime = 0;
+
+    let threshold = 150;
+    let restraint = 100;
+    let allowedTime = 300;
+
+    surface.addEventListener('touchstart', function(e) {
+        var touchobj = e.changedTouches[0];
+        startX = touchobj.pageX;
+        startY = touchobj.pageY;
+        startTime = new Date().getTime();
+        e.preventDefault();
+    }, false);
+
+    surface.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
+
+    surface.addEventListener('touchend', function(e) {
+        var touchobj = e.changedTouches[0];
+        distX = touchobj.pageX - startX;
+        distY = touchobj.pageY - startY;
+        elapsedTime = new Date().getTime() - startTime;
+        if (elapsedTime <= allowedTime) {
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+                if ((distX > 0)) {
+                    slide1.style.width == '0%' ? toSlide1() : toSlide2();
+                } else {
+                    slide1.style.width != '0%' ? toSlide2() : toSlide1();
+                }
+            }
+        }
+        e.preventDefault();
+    }, false);
+}
+
+var el = document.querySelector('.slider');
+swipedetect(el);
