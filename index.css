@@ -249,6 +249,7 @@ a:hover {
 }
 
 .slide-1-v-btn {
+  cursor: pointer;
   border-radius: 50%;
   position: absolute;
   bottom: 33px;
@@ -271,6 +272,7 @@ a:hover {
 }
 
 .slide-1-h-btn {
+  cursor: pointer;
   border-radius: 50%;
   position: absolute;
   top: 87px;
@@ -293,6 +295,7 @@ a:hover {
 }
 
 .slide-2-v-btn {
+  cursor: pointer;
   border-radius: 50%;
   position: absolute;
   bottom: 35px;
